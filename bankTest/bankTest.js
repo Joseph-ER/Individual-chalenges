@@ -26,11 +26,5 @@ class Bank{
   }
 }
 
-const BankSys = new Bank(0);
-
-BankSys.deposit(1000,'10/01/2023');
-BankSys.deposit(2000,'13/01/2023');
-BankSys.withdraw(500,'14/012023');
-BankSys.bankStatement();
 
 module.exports = Bank;
