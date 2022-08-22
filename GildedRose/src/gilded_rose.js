@@ -40,7 +40,7 @@ class Shop {
             break;
           case 'Conjured Mana Cake':
             this.reduceSellIn(this.items[i]);
-            this.conjuredReduceQuality(this.items[i]);
+            this.reduceQuality(this.items[i]);
             this.qualityLimiter(this.items[i]);
             break;
         }
@@ -63,6 +63,10 @@ class Shop {
   }
 
   reduceQuality(item){
+    if (item.name.includes('Conjured')){
+      this.conjuredReduceQuality(item);
+      return;
+    }
     if (item.sellIn > 0){
         item.quality -= 1;
     }else{
