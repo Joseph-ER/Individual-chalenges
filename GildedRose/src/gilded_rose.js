@@ -48,57 +48,57 @@ class Shop {
       return this.items;
     }
 
-  backstagePassManager(item){
-    if (item.sellIn > 5 && item.sellIn <=10){
-      item.quality += 2;
-    } else if (item.sellIn <= 5 && item.sellIn > 0){
-      item.quality += 3;
-    }else if (item.sellIn < 0){
-      item.quality = 0;
+    reduceSellIn(item){
+      item.sellIn -= 1;
     }
-  }
-
-  reduceSellIn(item){
-    item.sellIn -= 1;
-  }
-
-  reduceQuality(item){
-    if (item.name.includes('Conjured')){
-      this.conjuredReduceQuality(item);
-      return;
-    }
-    if (item.sellIn > 0){
+    
+    reduceQuality(item){
+      if (item.name.includes('Conjured')){
+        this.conjuredReduceQuality(item);
+        return;
+      }
+      if (item.sellIn > 0){
         item.quality -= 1;
-    }else{
-      item.quality -= 2;
+      }else{
+        item.quality -= 2;
+      }
+    }
+
+    increaseQuality(item){
+      if (item.quality < 50){
+        item.quality += 1;
+      }
+    }
+    
+    qualityLimiter(item){
+      if (item.quality > 50){
+        item.quality = 50;
+      }else if (item.quality < 0){
+        item.quality = 0;
+      }
+    }
+
+    backstagePassManager(item){
+      if (item.sellIn > 5 && item.sellIn <=10){
+        item.quality += 2;
+      } else if (item.sellIn <= 5 && item.sellIn > 0){
+        item.quality += 3;
+      }else if (item.sellIn < 0){
+        item.quality = 0;
+      }
+    }
+
+    conjuredReduceQuality(item){
+      if (item.sellIn > 0){
+        item.quality -= 2;
+      }else{
+        item.quality -= 4;
+      }
     }
   }
-
-  conjuredReduceQuality(item){
-    if (item.sellIn > 0){
-      item.quality -= 2;
-    }else{
-     item.quality -= 4;
-    }
+  
+  module.exports = {
+    Item,
+    Shop
   }
-
-
-  increaseQuality(item){
-    if (item.quality < 50){
-      item.quality += 1;
-    }
-  }
-
-  qualityLimiter(item){
-    if (item.quality > 50){
-      item.quality = 50;
-    }else if (item.quality < 0){
-      item.quality = 0;
-    }
-  }
-}
-
-module.exports = {
-  Item,
-  Shop
-}
+  
