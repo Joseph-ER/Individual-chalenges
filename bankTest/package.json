@@ -1,0 +1,19 @@
+{
+  "name": "banktest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bankTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esLint": "npm:eslint@^8.22.0",
+    "jest": "^28.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0"
+  }
+}
