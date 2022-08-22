@@ -3,11 +3,6 @@ class Bank{
     this.balance = balance;
     this.statement = [];
   }
-
-  logBalance(){
-    return this.balance;
-  }
-
   deposit(ammount, date){
     this.balance += ammount;
     this.statement.push({date: date, ammount: ammount, balance: this.balance});
