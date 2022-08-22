@@ -5,4 +5,4 @@ I approached this task from the addition or subtraction of ammounts withdrawn or
 I structured this code with as few functions as possible for better readability and to not overcomplicate the code.
 
 
-![Screenshot of app](https://imgur.com/P160F99)
+![Screenshot of app](https://imgur.com/P160F99.png)
