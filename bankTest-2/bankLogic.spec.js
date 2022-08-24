@@ -6,10 +6,11 @@ describe('BankLogic tests',()=>{
     const bank = new BankLogic(100);
     expect(bank.balance).toEqual(100);
   });
-  it('deposit class increases balance by 100',()=>{
+  it('deposit class increases balance by 100 and stores 100 in .deposited and sets .withdrawn to 0 for this transaction',()=>{
     const bank = new BankLogic(0);
     bank.deposit(100);
     expect(bank.balance).toEqual(100);
+    expect(bank.deposited).toEqual(100);
   });
   it('withdraw class reduces balance by 100',()=>{
     const bank = new BankLogic(100);

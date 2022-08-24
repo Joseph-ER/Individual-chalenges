@@ -6,6 +6,8 @@ class BankLogic{
   }
 
   deposit(deposit){
+    this.withdrawn = 0;
+    this.deposited = deposit;
     this.balance += deposit;
   }
 
