@@ -10,6 +10,8 @@ class BankLogic{
     this.withdrawn = 0;
     this.deposited = deposit;
     this.balance += deposit;
+    this.statement.push({date: date, credit: this.deposited, debit: this.withdrawn, balance: this.balance});
+    console.log(this.statement);
   }
 
   withdraw(withdraw,date){
