@@ -1,0 +1,19 @@
+{
+  "name": "banktest-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-plugin-react": "^7.30.1"
+  },
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
