@@ -7,6 +7,10 @@ class BankLogic{
     this.balance += deposit;
   }
 
+  withdraw(withdraw){
+    this.balance -= withdraw;
+  }
+
 }
 
 module.exports = BankLogic;
