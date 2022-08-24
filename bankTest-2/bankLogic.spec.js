@@ -7,7 +7,7 @@ describe('BankLogic tests',()=>{
     expect(bank.balance).toEqual(100);
     expect(bank.deposited).toEqual(0);
     expect(bank.withdrawn).toEqual(0);
-    expect(bank.statement).toEqual([]);
+    expect(bank.statements).toEqual([]);
   });
   it('deposit class increases balance by 100 with date and stores 100 in .deposited and sets .withdrawn to 0 for this transaction',()=>{
     const bank = new BankLogic(0);
@@ -29,16 +29,22 @@ describe('BankLogic tests',()=>{
     const bank = new BankLogic(0);
     expect(bank.withdrawn).toEqual(0);
   });
-  it('depositing 100 the correct data is stored in .statement',() => {
+  it('depositing 100 the correct data is stored in .statements',() => {
     const bank = new BankLogic(0);
     bank.deposit(100,'12/12/12');
     expect(bank.balance).toEqual(100);
-    expect(bank.statement[0]).toEqual({"balance": 100, "credit": 100, "date": "12/12/12", "debit": 0});
+    expect(bank.statements[0]).toEqual({"balance": 100, "credit": 100, "date": "12/12/12", "debit": 0});
   });
-  it('withdrawing 100 the correct data is stored in .statement',() => {
+  it('withdrawing 100 the correct data is stored in .statements',() => {
     const bank = new BankLogic(100);
     bank.withdraw(100,'12/12/12');
     expect(bank.balance).toEqual(0);
-    expect(bank.statement[0]).toEqual({"debit": 100, "date": "12/12/12", "balance": 0, "credit": 0});
+    expect(bank.statements[0]).toEqual({"debit": 100, "date": "12/12/12", "balance": 0, "credit": 0});
   });
+  it('stores a withdraw transaction and a deposit transaction in .statements',() => {
+    const bank = new BankLogic(0);
+    bank.deposit(100,'12/12/12');
+    bank.withdraw(50,'13/12/12');
+    expect(bank.statements.length).toEqual(2);
+  })
 });
