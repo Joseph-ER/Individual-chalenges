@@ -2,9 +2,12 @@ const BankLogic = require('./bankLogic');
 
 
 describe('BankLogic tests',()=>{
-  it('is created with a balance of 100',()=>{
+  it('is created with a balance of 100, .deposited and .withdrawn at nil and an empty .statement array',()=>{
     const bank = new BankLogic(100);
     expect(bank.balance).toEqual(100);
+    expect(bank.deposited).toEqual(0);
+    expect(bank.withdrawn).toEqual(0);
+    expect(bank.statement).toEqual([]);
   });
   it('deposit class increases balance by 100 and stores 100 in .deposited and sets .withdrawn to 0 for this transaction',()=>{
     const bank = new BankLogic(0);

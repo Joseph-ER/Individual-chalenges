@@ -3,6 +3,7 @@ class BankLogic{
     this.balance = balance;
     this.deposited = 0;
     this.withdrawn = 0;
+    this.statement = [];
   }
 
   deposit(deposit){
