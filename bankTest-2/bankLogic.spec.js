@@ -46,5 +46,5 @@ describe('BankLogic tests',()=>{
     bank.deposit(100,'12/12/12');
     bank.withdraw(50,'13/12/12');
     expect(bank.statements.length).toEqual(2);
-  })
+  });
 });
