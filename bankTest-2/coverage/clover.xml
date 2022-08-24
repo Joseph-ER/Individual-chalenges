@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1661350277234" clover="3.2.0">
-  <project timestamp="1661350277234" name="All files">
-    <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="28" coveredelements="28" complexity="0" loc="21" ncloc="21" packages="1" files="2" classes="2"/>
+<coverage generated="1661352418670" clover="3.2.0">
+  <project timestamp="1661352418670" name="All files">
+    <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="27" coveredelements="27" complexity="0" loc="20" ncloc="20" packages="1" files="2" classes="2"/>
     <file name="bankDisplay.js" path="/Users/josephedwardsrean/Documents/job-hunter-challenges/bankTest-2/bankDisplay.js">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <line num="3" count="2" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
       <line num="12" count="2" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
     </file>
     <file name="bankLogic.js" path="/Users/josephedwardsrean/Documents/job-hunter-challenges/bankTest-2/bankLogic.js">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
