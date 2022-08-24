@@ -34,5 +34,11 @@ describe('BankLogic tests',()=>{
     bank.deposit(100,'12/12/12');
     expect(bank.balance).toEqual(100);
     expect(bank.statement[0]).toEqual({"balance": 100, "credit": 100, "date": "12/12/12", "debit": 0});
-  })
+  });
+  it('withdrawing 100 the correct data is stored in .statement',() => {
+    const bank = new BankLogic(100);
+    bank.withdraw(100,'12/12/12');
+    expect(bank.balance).toEqual(0);
+    expect(bank.statement[0]).toEqual({"debit": 100, "date": "12/12/12", "balance": 0, "credit": 0});
+  });
 });
