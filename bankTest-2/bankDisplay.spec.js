@@ -6,5 +6,5 @@ describe('BankDisplay and BankLogic integration tests',()=>{
     const bankLogic = new BankLogic;
     const bank = new BankDisplay(bankLogic);
     expect(bank.logic.statements).toEqual([]);
-  })
+  });
 });
