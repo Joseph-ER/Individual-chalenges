@@ -12,10 +12,11 @@ describe('BankLogic tests',()=>{
     expect(bank.balance).toEqual(100);
     expect(bank.deposited).toEqual(100);
   });
-  it('withdraw class reduces balance by 100',()=>{
+  it('withdraw class reduces balance by 100 and stores 100 in .withdrawn and sets .deposited to 0 for this transaction',()=>{
     const bank = new BankLogic(100);
     bank.withdraw(100);
     expect(bank.balance).toEqual(0);
+    expect(bank.withdrawn).toEqual(100);
   });
   it('is created with empty this.deposit',() => {
     const bank = new BankLogic(0);

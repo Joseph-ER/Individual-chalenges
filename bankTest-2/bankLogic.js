@@ -12,6 +12,8 @@ class BankLogic{
   }
 
   withdraw(withdraw){
+    this.deposited = 0;
+    this.withdrawn = withdraw;
     this.balance -= withdraw;
   }
 
