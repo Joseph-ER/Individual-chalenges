@@ -2,6 +2,7 @@ class BankLogic{
   constructor(balance){
     this.balance = balance;
     this.deposited = 0;
+    this.withdrawn = 0;
   }
 
   deposit(deposit){
