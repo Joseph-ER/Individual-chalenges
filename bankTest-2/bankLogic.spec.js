@@ -16,4 +16,8 @@ describe('BankLogic tests',()=>{
     bank.withdraw(100);
     expect(bank.balance).toEqual(0);
   });
+  it('is created with empty this.deposit',() => {
+    const bank = new BankLogic(0);
+    expect(bank.deposited).toEqual(0);
+  })
 });
