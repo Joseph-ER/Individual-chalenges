@@ -1,23 +1,23 @@
 class BankLogic {
 	constructor (balance) {
-		this.balance = parseInt(balance);
-		this.deposited = 0;
-		this.withdrawn = 0;
+		this.balance = parseFloat(balance);
+		this.deposited = parseFloat(0);
+		this.withdrawn = parseFloat(0);
 		this.statements = [];
 	}
 
 	deposit (deposit, date) {
-		this.withdrawn = 0;
-		this.deposited = deposit;
-		this.balance = deposit;
-		this.statements.push({ date, credit: this.deposited, debit: this.withdrawn, balance: this.balance });
+		this.withdrawn = parseFloat(0);
+		this.deposited = parseFloat(deposit);
+		this.balance += this.deposited;
+		this.statements.push({ date, credit: this.deposited.toFixed(2), debit: this.withdrawn.toFixed(2), balance: this.balance.toFixed(2) });
 	}
 
 	withdraw (withdraw, date) {
-		this.deposited = 0;
-		this.withdrawn = withdraw;
-		this.balance -= withdraw;
-		this.statements.push({ date, credit: this.deposited, debit: this.withdrawn, balance: this.balance });
+		this.deposited = parseFloat(0);
+		this.withdrawn = parseFloat(withdraw);
+		this.balance -= this.withdrawn;
+		this.statements.push({ date, credit: this.deposited.toFixed(2), debit: this.withdrawn.toFixed(2), balance: this.balance.toFixed(2) });
 	}
 }
 
