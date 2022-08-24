@@ -3,6 +3,9 @@ class BankLogic{
     this.balance = balance;
   }
 
+  deposit(deposit){
+    this.balance += deposit;
+  }
 
 }
 
