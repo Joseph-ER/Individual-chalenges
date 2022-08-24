@@ -15,11 +15,9 @@ describe('BankDisplay and BankLogic integration tests',()=>{
   it('orderStatements method reorders by date so 1st in array is most recent',() => {
     const mockLogic = new BankLogic();
     mockLogic.statements = [{balance: 100, date: '01/01/20'}, {balance: 100, date: '01/02/20'}];
-    console.log(mockLogic.statements);
     const bank = new BankDisplay(mockLogic);
     expect(bank.logic.statements[0]).toEqual({"balance": 100,"date": "01/01/20"})
-    bank.orderStatements();
+    bank.showStatements();
     expect(bank.logic.statements[0]).toEqual({"balance": 100,"date": "01/02/20"})
   });
-  
 });
