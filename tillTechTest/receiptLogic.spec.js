@@ -63,5 +63,20 @@ describe('ReceiptLogic tests',() => {
     receipt.addVat();
     expect(receipt.receiptBody()).toEqual('Order: \nAmericano,3.75\nAmericano,3.75\nVAT: £0.65\nTotal: £8.15\n------------');
   });
-  
+  it('tests showReceipt runs methods inside',() => {
+    const shopDetails = {
+      "shopName": "The Coffee Connection",
+      "address": "123 Lakeside Way",
+      "phone": "16503600708",
+    };
+    const mockTill = new TillLogic(shopDetails);
+    mockTill.shop = shopDetails;
+    mockTill.order = [ [ 'Americano', 3.75 ], [ 'Americano', 3.75 ] ]
+    mockTill.orderTotal = 7.5;
+    mockTill.date = '2022-08-26T11:41:43.590Z';
+    const receipt = new ReceiptLogic(mockTill);
+    expect(receipt.calculatedvat).toEqual(0);
+    receipt.showReceipt();
+    expect(receipt.calculatedvat.toFixed(2)).toEqual("0.65");
+  })
 });

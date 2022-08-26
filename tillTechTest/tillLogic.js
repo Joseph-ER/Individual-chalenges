@@ -19,9 +19,13 @@ class TillLogic{
   }
 
   showMenu(){
+    console.log('------------');
+    console.log('Menu: ');
+    console.log('------------');
     this.menu.forEach(item=>{
       console.log(item);
     });
+    console.log('------------');
   }
 
   placeOrder(order, ammount){
