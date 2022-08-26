@@ -32,7 +32,36 @@ describe('ReceiptLogic tests',() => {
     mockTill.shop = shopDetails;
     const receipt = new ReceiptLogic(mockTill);
     receipt.addVat()
-    expect(receipt.orderTotal).toEqual(1.0864);
-
-  })
+    expect(receipt.till.orderTotal).toEqual(1.0864);
+  });
+  it('receiptHeader correctly formats and includes date, name of shop, address and number',() => {
+    const shopDetails = {
+      "shopName": "The Coffee Connection",
+      "address": "123 Lakeside Way",
+      "phone": "16503600708",
+    };
+    const mockTill = new TillLogic(shopDetails);
+    mockTill.shop = shopDetails;
+    mockTill.order = [ [ 'Americano', 3.75 ], [ 'Americano', 3.75 ] ]
+    mockTill.orderTotal = 7.5;
+    mockTill.date = '2022-08-26T11:41:43.590Z';
+    const receipt = new ReceiptLogic(mockTill);
+    expect(receipt.receiptHeader()).toEqual('Date: 2022-08-26T11:41:43.590Z\nThe Coffee Connection\n123 Lakeside Way\n16503600708\n------------');
+  });
+  it('receiptBody correctly formats and includes order, VAT and total',() => {
+    const shopDetails = {
+      "shopName": "The Coffee Connection",
+      "address": "123 Lakeside Way",
+      "phone": "16503600708",
+    };
+    const mockTill = new TillLogic(shopDetails);
+    mockTill.shop = shopDetails;
+    mockTill.order = [ [ 'Americano', 3.75 ], [ 'Americano', 3.75 ] ]
+    mockTill.orderTotal = 7.5;
+    mockTill.date = '2022-08-26T11:41:43.590Z';
+    const receipt = new ReceiptLogic(mockTill);
+    receipt.addVat();
+    expect(receipt.receiptBody()).toEqual('Order: \nAmericano,3.75\nAmericano,3.75\nVAT: £0.65\nTotal: £8.15\n------------');
+  });
+  
 });

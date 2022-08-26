@@ -7,6 +7,7 @@ class TillLogic{
     this.formatData();
     this.order= [];
     this.orderTotal = 0;
+    this.date = new Date(Date.now());
   }
 
   formatData(){
