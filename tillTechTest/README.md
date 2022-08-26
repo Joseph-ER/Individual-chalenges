@@ -5,9 +5,11 @@ Download this repository. Navigate to inside the directory tillTechTest and run 
  ## My approach
 First I wanted to be able to display the items in the prices array from the hipsterCoffee.json. This was a bit tricky as I had issues manipulating the JSON, but got there in the end.
 
-Next, I worked to allowthe user to place an order and pass tests for this.
+I had to try a few different ways to display the menu in a way that would be conveniant for me to select items from to place orders. I am very happy with the way I got it to work at the end.
 
-Then, I made the receiptLogic class that displays the receipt in a clear way for the user.
+Next, I worked to allow the user to place an order and pass tests for this.
+
+Then, I made the receiptLogic class that displays the receipt in a clear way for the user. Testing for this was tricky, as I had console.logged a lot of the data I wanted, but to test properly i had to reformat these to all be in 1 'return' line as to be something I can test.
 
 Finally, I reformatted any code I had not reformatted as well as running eslint to make sure my code was formatted correctly.
 
@@ -33,6 +35,9 @@ To view the receipt, run the below line.
 
 Below is an example of a receipt for the order above of 2 Americanos.
 ![Receipt screenshot](https://imgur.com/qbRyEto.png)
+
+Finally, run save the changed 'app.js' file and run the below in terminal.
+  node app.js
 
  ## How to test
 Use the below in the terminal while in directory 'tillTechTest' to run jest tests.
