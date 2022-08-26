@@ -13,7 +13,8 @@ describe('TillLogic tests',() => {
   it('orderItem adds the item named to the .order array',() => {
     const till = new TillLogic(HipsterCoffee);
     till.placeOrder('Cafe Latte',1);
-    expect(till.order[0]).toEqual(['Cafe Latte',4.75]);
+    expect(till.order[0]).toEqual(['Cafe Latte', 4.75]);
+    expect(till.orderTotal).toEqual(4.75);
   })
 
 })
