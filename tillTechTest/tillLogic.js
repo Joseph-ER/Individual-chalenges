@@ -5,13 +5,14 @@ class TillLogic{
     this.prices = null;
     this.menu = null
     this.formatData();
+    this.order= [];
   }
 
   formatData(){
     this.shop =JSON.parse(this.shop.slice(1,-1));
-    this.prices = this.shop.prices;
-    this.menu = JSON.parse(JSON.stringify(this.shop.prices).slice(1,-1));
-    this.menu = JSON.stringify(this.menu).slice(1,-1);
+    this.items = this.shop.prices;
+    this.items = JSON.parse(JSON.stringify(this.items).slice(1,-1));
+    this.menu = JSON.stringify(this.items).slice(1,-1);
     this.menu = this.menu.split(",");
   }
 
@@ -20,9 +21,23 @@ class TillLogic{
       console.log(item);
     });
   }
+
+  placeOrder(order, ammount){
+    for (let x = 0; x < ammount; x++){
+      // console.log(this.items[order]);
+      this.order.push([order, this.items[order]]);
+    }
+    // console.log(`Order placed of ${this.order}`)
+  }
 }
 
+
+
 const till = new TillLogic(HipsterCoffee);
-till.showMenu();
+// till.showMenu();
+till.placeOrder('Tea',2);
+till.placeOrder('Double Espresso',1);
+till.placeOrder('Chocolate Chip Muffin',1);
+console.log(till.order);
 
 module.exports = TillLogic;
