@@ -8,9 +8,4 @@ class ReceiptLogic{
 }
 
 
-const till = new TillLogic(HipsterCoffee);
-till.placeOrder("Tea",1)
-const test = new ReceiptLogic(till)
-console.log(test.order);
-
 module.exports = ReceiptLogic;
