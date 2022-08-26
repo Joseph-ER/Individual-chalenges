@@ -1,8 +1,15 @@
-## How to install!
+## How to install
 Download this repository. Navigate to inside the directory tillTechTest and run the below to install deendencies
  npm install
 
  ## My approach
+First I wanted to be able to display the items in the prices array from the hipsterCoffee.json. This was a bit tricky as I had issues manipulating the JSON, but got there in the end.
+
+Next, I worked to allowthe user to place an order and pass tests for this.
+
+Then, I made the receiptLogic class that displays the receipt in a clear way for the user.
+
+Finally, I reformatted any code I had not reformatted as well as running eslint to make sure my code was formatted correctly.
 
  ## How to use
 Navigate to 'tillTechTest' directory.
