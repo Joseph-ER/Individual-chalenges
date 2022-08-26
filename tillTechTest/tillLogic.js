@@ -2,7 +2,7 @@ const HipsterCoffee = require('./hipsterCoffee.json');
 class TillLogic{
   constructor(shopDetails){
     this.shop = JSON.stringify(shopDetails);
-    this.prices = null;
+    this.items = null;
     this.menu = null
     this.formatData();
     this.order= [];
