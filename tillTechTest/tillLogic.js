@@ -24,20 +24,9 @@ class TillLogic{
 
   placeOrder(order, ammount){
     for (let x = 0; x < ammount; x++){
-      // console.log(this.items[order]);
       this.order.push([order, this.items[order]]);
     }
-    // console.log(`Order placed of ${this.order}`)
   }
 }
-
-
-
-const till = new TillLogic(HipsterCoffee);
-// till.showMenu();
-till.placeOrder('Tea',2);
-till.placeOrder('Double Espresso',1);
-till.placeOrder('Chocolate Chip Muffin',1);
-console.log(till.order);
 
 module.exports = TillLogic;
