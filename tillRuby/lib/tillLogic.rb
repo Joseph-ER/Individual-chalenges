@@ -1,0 +1,3 @@
+class TillLogic
+    
+end
